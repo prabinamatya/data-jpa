@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Hello World
+hello from web-inf/jsp
 </body>
 </html>
