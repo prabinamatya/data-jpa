@@ -13,6 +13,7 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
+	<!-- presentation is defined in dispatcher -->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -26,4 +27,10 @@
 		<url-pattern>*.json</url-pattern>
 		<url-pattern>*.xml</url-pattern>
 	</servlet-mapping>
+
+	<!-- rest of the beans defined in applicationContext -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
 </web-app>
