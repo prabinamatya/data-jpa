@@ -1,8 +1,12 @@
 package com.prabin.practice.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -16,6 +20,12 @@ public class User {
 	private String email;
 	
 	private String password;
+	
+	@ManyToMany
+	private List<Role> roles;
+	
+	@OneToMany(mappedBy="user")
+	private List<Blog> blogs;
 
 	public Integer getId() {
 		return id;
@@ -48,6 +58,21 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
+	public List<Blog> getBlogs() {
+		return blogs;
+	}
+
+	public void setBlogs(List<Blog> blogs) {
+		this.blogs = blogs;
+	}
 	
 }

@@ -1,8 +1,12 @@
 package com.prabin.practice.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 
 @Entity
@@ -13,6 +17,10 @@ public class Role {
 	private Integer id;
 	
 	private String name;
+	
+	@ManyToMany
+	@JoinTable
+	List<User> users;
 
 	public Integer getId() {
 		return id;
@@ -29,7 +37,13 @@ public class Role {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
 
 }

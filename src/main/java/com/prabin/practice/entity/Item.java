@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Item {
@@ -22,6 +24,10 @@ public class Item {
 	private Date publishedDate;
 	
 	private String link;
+	
+	@ManyToOne
+	@JoinColumn(name="blog_id")
+	private Blog blog;
 
 	public Integer getId() {
 		return id;
@@ -61,6 +67,14 @@ public class Item {
 
 	public void setLink(String link) {
 		this.link = link;
+	}
+
+	public Blog getBlog() {
+		return blog;
+	}
+
+	public void setBlog(Blog blog) {
+		this.blog = blog;
 	}
 	
 	
