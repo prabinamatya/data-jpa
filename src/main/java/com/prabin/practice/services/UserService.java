@@ -1,4 +1,4 @@
-package com.prabin.practice.service;
+package com.prabin.practice.services;
 
 import java.util.List;
 
@@ -16,5 +16,9 @@ public class UserService {
 	
 	public List<User> findAll() {
 		return userRepository.findAll();
+	}
+
+	public User findOne(int id) {
+		return userRepository.findOne(id);
 	}
 }
