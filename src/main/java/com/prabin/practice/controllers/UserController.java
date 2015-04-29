@@ -24,4 +24,9 @@ public class UserController {
 		model.addAttribute("user", userService.findOneWithBlogs(id));
 		return "user-detail";
 	}
+	
+	@RequestMapping("/register")
+	public String showRegister() {
+		return "user-register";
+	}
 }
