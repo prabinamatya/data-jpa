@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.prabin.practice.entity.User;
 import com.prabin.practice.services.UserService;
@@ -36,4 +37,11 @@ public class UserController {
 	public String showRegister() {
 		return "user-register";
 	}
+	
+	@RequestMapping(value="/register", method=RequestMethod.POST)
+	public String doRegister(@ModelAttribute("user") User user) {
+		userService.save(user);
+		return "user-register";
+	}
+	
 }
