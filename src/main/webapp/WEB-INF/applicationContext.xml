@@ -39,5 +39,7 @@
 
 	<jpa:repositories base-package="com.prabin.practice.repositories"
 		entity-manager-factory-ref="emf" transaction-manager-ref="transactionManager"/>
+		
+	<import resource="security.xml"/>
 </beans>
 
